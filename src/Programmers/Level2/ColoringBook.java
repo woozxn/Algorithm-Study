@@ -74,3 +74,73 @@ class ColoringBook {
         System.out.println(coloringBook.solution(m, n, picture)[0] + ", " + coloringBook.solution(m, n, picture)[1]);
     }
 }
+// bfs 풀이
+//import java.util.LinkedList;
+//        import java.util.Queue;
+//class Solution {
+//    public int[] solution(int m, int n, int[][] picture) {
+//
+//        boolean[][] check = new boolean[m][n];
+//        Queue<Node> q = new LinkedList<>();
+//        int[] dx = { 0, 0, -1, 1 };
+//        int[] dy = { 1, -1, 0, 0 };
+//
+//        int numberOfArea = 0;
+//        int maxSizeOfOneArea = 0;
+//
+//        for (int i = 0; i < picture.length; i++) {
+//            for (int j = 0; j < picture[i].length; j++) {
+//                int tempMax = 0;
+//                if (!check[i][j] && picture[i][j] != 0) {
+//                    check[i][j] = true;
+//                    q.add(new Node(i, j));
+//                    tempMax++;
+//
+//                    while (!q.isEmpty()) {
+//
+//                        Node current = q.poll();
+//
+//                        int nextX = 0;
+//                        int nextY = 0;
+//
+//                        for (int k = 0; k < 4; k++) {
+//                            nextX = current.x + dx[k];
+//                            nextY = current.y + dy[k];
+//
+//                            if (nextX < 0 || nextY < 0 || nextX >= m || nextY >= n || check[nextX][nextY])
+//                                continue;
+//                            if (picture[current.x][current.y] == picture[nextX][nextY]) {
+//                                check[nextX][nextY] = true;
+//                                q.add(new Node(nextX, nextY));
+//                                tempMax++;
+//                            }
+//                        } // end of for_k
+//
+//                    } // end of while
+//                    numberOfArea++;
+//                    maxSizeOfOneArea = maxSizeOfOneArea < tempMax ? tempMax : maxSizeOfOneArea;
+//                } // end of if
+//
+//            } // end of for_j
+//        } // end of for_i
+//
+//        int[] answer = new int[2];
+//        answer[0] = numberOfArea;
+//        answer[1] = maxSizeOfOneArea;
+//
+//        System.out.println(numberOfArea + "," + maxSizeOfOneArea);
+//
+//        return answer;
+//
+//    } // end of solution
+//
+//    static class Node {
+//        int x, y;
+//
+//        public Node(int x, int y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//    }
+//
+//}
