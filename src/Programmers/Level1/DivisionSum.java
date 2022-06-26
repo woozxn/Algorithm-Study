@@ -1,6 +1,6 @@
 package Programmers.Level1;
 //약수의 합
-class Solution {
+class DivisionSum {
     public int solution(int n) {
         int answer = 0;
 
