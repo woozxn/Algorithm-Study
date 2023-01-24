@@ -15,7 +15,7 @@ public class Queue2 {
     static int back = 0;
 
     static StringBuilder sb = new StringBuilder();
-    
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
