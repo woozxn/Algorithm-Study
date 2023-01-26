@@ -12,13 +12,13 @@ public class NumericTrans {
         int tmp = 1;
         int ans = 0;
 
-        for (int i = s.length()-1; i >= 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             char c = s.charAt(i);
 
-            if('A'<= c && c <= 'Z') {
-                ans += (c-'A'+10)*tmp;
-            }else {
-                ans += (c-'0')*tmp;
+            if ('A' <= c && c <= 'Z') {
+                ans += (c - 'A' + 10) * tmp;
+            } else {
+                ans += (c - '0') * tmp;
             }
             tmp *= N;
         }
