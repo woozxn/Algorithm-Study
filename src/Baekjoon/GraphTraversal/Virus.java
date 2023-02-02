@@ -8,7 +8,7 @@ public class Virus {
     static int N, M;
     static int[][] virus;
     static boolean[] visit;
-    static int count;
+    static int count = 0;
 
     public static void main(String[] args) {
 
@@ -18,7 +18,6 @@ public class Virus {
 
         visit = new boolean[N+1];
         virus = new int[N+1][N+1];
-        count = 0;
 
         for(int i=0; i<M; i++) {
             int a = sc.nextInt();
@@ -31,7 +30,7 @@ public class Virus {
 
     static int dfs(int a) {
         visit[a] = true;
-        for(int i=1; i<=M; i++) {
+        for(int i=1; i<=N; i++) {
             if(virus[a][i] == 1 && visit[i] == false) {
                 count++;
                 dfs(i);
